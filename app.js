@@ -138,7 +138,8 @@ form?.addEventListener('submit', (e)=>{
   window.open(gmail, '_blank', 'noopener');
 });
 
-    document.addEventListener('DOMContentLoaded', () => {
+// Toy Description 文字輪播
+document.addEventListener('DOMContentLoaded', () => {
   const toyBox   = document.querySelector('[data-toy]');
   const prevBtn  = document.querySelector('[data-toy-prev]');
   const nextBtn  = document.querySelector('[data-toy-next]');
@@ -168,13 +169,6 @@ form?.addEventListener('submit', (e)=>{
       render();
     });
 
-    render(); // 初始化
+    render(); // 初始化顯示第一段
   }
-});
-
-
-    render();
-  }
-
-  //（可保留你原本的其他程式：年份、nav toggle、hero 圖片…）
 });
