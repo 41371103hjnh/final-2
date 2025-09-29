@@ -51,3 +51,118 @@ h3{font-size:var(--h3);margin:var(--space-2) 0 var(--space-1)}
 .toy-text{min-height:7lh}
 .site-footer{padding:var(--space-4) 0;border-top:1px solid rgba(63,89,116,.15);text-align:center;color:var(--muted)}
 .accent{background:linear-gradient(180deg,rgba(186,175,183,.08),transparent 70%)}
+/* ==== Contact Section (match the screenshot) ==== */
+:root{
+  --contact-bg: #bfb4bd;           /* 淺灰紫底色 */
+  --contact-label: #ffffff;         /* 標籤文字白色 */
+  --contact-input-bg: #ffffff;      /* 輸入框白底 */
+  --contact-input-text: #333;       /* 輸入框文字 */
+  --contact-btn-bg: #3c4043;        /* 按鈕深灰 */
+  --contact-btn-text: #ffffff;      /* 按鈕白字 */
+  --contact-focus: 0 0 0 3px rgba(60,64,67,.25);
+}
+
+#contact { padding-top: 0; }
+
+/* 外層卡片 */
+.contact-pane{
+  background: var(--contact-bg);
+  border-radius: 40px;
+  padding: 36px 32px 56px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 標題置中（沿用你原本的 .caption .center 亦可） */
+#contact .caption.center{
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* 表單為單欄縱向排列 */
+.contact-grid{
+  display: grid;
+  gap: 24px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 標籤 & 內距 */
+.contact-grid label{
+  display: grid;
+  gap: 10px;
+  font-size: 22px;                 /* 左側標籤字大 */
+  color: var(--contact-label);
+}
+
+/* 輸入框樣式（白底、大圓角、高度厚實） */
+.contact-grid input,
+.contact-grid textarea{
+  background: var(--contact-input-bg);
+  color: var(--contact-input-text);
+  border: none;
+  border-radius: 14px;
+  padding: 18px 20px;
+  font-size: 20px;
+  line-height: 1.4;
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.05) inset;
+}
+
+.contact-grid textarea{
+  min-height: 220px;               /* 近似截圖高度 */
+  resize: vertical;
+}
+
+/* 焦點環 */
+.contact-grid input:focus,
+.contact-grid textarea:focus{
+  box-shadow: var(--contact-focus);
+}
+
+/* 送出按鈕：置中、膠囊、放大字體 */
+.contact-actions{
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.contact-actions .btn{
+  background: var(--contact-btn-bg);
+  color: var(--contact-btn-text);
+  border: none;
+  border-radius: 999px;             /* 膠囊 */
+  font-size: 28px;                  /* 截圖般的大字 */
+  padding: 14px 32px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+
+.contact-actions .btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+
+.contact-actions .btn:active{
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* 下方 email 文字（你已經有 .center + inline style，可補強一下） */
+#contact .center{
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 24px;                  /* 與截圖一致的大字 */
+}
+
+/* 手機調整：避免過大 */
+@media (max-width: 640px){
+  .contact-pane{ border-radius: 28px; padding: 28px 20px 44px; }
+  .contact-grid label{ font-size: 18px; }
+  .contact-grid input,
+  .contact-grid textarea{ font-size: 18px; padding: 14px 16px; }
+  .contact-actions .btn{ font-size: 22px; padding: 12px 24px; }
+  #contact .center{ font-size: 18px; }
+}
