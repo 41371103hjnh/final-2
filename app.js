@@ -137,3 +137,58 @@ form?.addEventListener('submit', (e)=>{
   const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;
   window.open(gmail, '_blank', 'noopener');
 });
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Toy Description 三段輪播 ---
+  const toyBox   = document.querySelector('[data-toy]');
+  const prevBtn  = document.querySelector('[data-toy-prev]');
+  const nextBtn  = document.querySelector('[data-toy-next]');
+  const idxEl    = document.querySelector('[data-toy-index]');
+  const totalEl  = document.querySelector('[data-toy-total]');
+
+  if (toyBox && prevBtn && nextBtn && idxEl && totalEl) {
+    const slides = Array.from(toyBox.querySelectorAll('p')).filter(Boolean);
+
+    // 若你只想顯示三段，就只取前三段
+    const visibleSlides = slides.slice(0, 3);
+    const total = visibleSlides.length;
+    let i = 0;
+
+    // 先把多餘段落隱藏起來（避免出現在輪播外）
+    slides.forEach(p => p.classList.remove('is-active'));
+    visibleSlides.forEach((p, k) => p.dataset.slide = String(k));
+
+    function render() {
+      visibleSlides.forEach((p, k) => {
+        if (k === i) p.classList.add('is-active');
+        else p.classList.remove('is-active');
+      });
+      idxEl.textContent = String(i + 1);
+      totalEl.textContent = String(total);
+
+      // 若想要首尾禁用按鈕（不循環）→ 打開以下兩行
+      // prevBtn.disabled = (i === 0);
+      // nextBtn.disabled = (i === total - 1);
+    }
+
+    prevBtn.addEventListener('click', () => {
+      i = (i - 1 + total) % total;  // 循環
+      render();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      i = (i + 1) % total;          // 循環
+      render();
+    });
+
+    // 鍵盤左右鍵也可切換（可選）
+    toyBox.setAttribute('tabindex', '0');
+    toyBox.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft')  { i = (i - 1 + total) % total; render(); }
+      if (e.key === 'ArrowRight') { i = (i + 1) % total; render(); }
+    });
+
+    render();
+  }
+
+  //（可保留你原本的其他程式：年份、nav toggle、hero 圖片…）
+});
