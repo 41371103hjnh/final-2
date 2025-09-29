@@ -169,4 +169,8 @@ h3{font-size:var(--h3);margin:var(--space-2) 0 var(--space-1)}
 /* Toy Description 輪播 */
 .toy-text p { display: none; }          /* 預設全部隱藏 */
 .toy-text p.is-active { display: block; } /* 只有當前段落顯示 */
+[data-basic-grid] img {
+  transform: scale(2);        /* 放大兩倍 */
+  transform-origin: center;   /* 以中心點放大，不會偏移 */
+}
 
