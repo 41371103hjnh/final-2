@@ -181,3 +181,7 @@ h3{font-size:var(--h3);margin:var(--space-2) 0 var(--space-1)}
   line-height: 1.8;
 }
 
+/* 只縮小 highlight.html 的 section 間距 */
+body.page-highlight .section {
+  padding: 32px 0; /* 原本 64px → 一半 */
+}
