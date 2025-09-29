@@ -7,6 +7,7 @@
   <meta name="description" content="Home / About me / Contact" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+  
 <body>
   <header class="site-header">
     <div class="container">
@@ -20,47 +21,74 @@
     </div>
   </header>
   <main>
-  <section class="section hero accent">
-    <div class="container hero__grid">
-      <div>
-        <h1>JIA‑EN HO</h1>
-        <p class="lead">On a journey, still seeking the future.</p>
-        <div class="buttons" style="display:flex;gap:12px;margin-top:var(--space-3)">
-          <a class="btn btn--primary" href="portfolio.html">See Portfolio</a>
-          <a class="btn btn--ghost" href="#contact">Contact</a>
+ <section class="section hero accent">
+  <div class="container hero__grid">
+    <div>
+      <h1>JIA-EN HO</h1>
+      <p class="lead">TAHRD/CSIE</p>
+      <div class="buttons" style="display:flex;gap:12px;margin-top:var(--space-3)">
+        <a class="btn btn--primary" href="portfolio.html">See Portfolio</a>
+        <a class="btn btn--ghost" href="#contact">Contact</a>
+      </div>
+
+      <div class="social-links" style="margin-top:16px; display:flex; gap:16px;">
+        <a href="https://www.instagram.com/jnhs1c_/?next=%2F" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://github.com/41371103hjnh" target="_blank" rel="noopener">GitHub</a>
+        <a href="http://www.linkedin.com/in/jia-en-ho-ntnu117" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div>
+      <img class="hero__img" data-hero-img src="assets/home/sea.jpg" alt="Hero">
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <!-- 🔹 標題置中 -->
+    <h2 style="text-align:center;">About me</h2>
+
+    <p style="text-align:center; max-width:700px; margin: 0 auto 24px auto; line-height:1.6;">
+      JIA-EN HO is a student from National Taiwan Normal University, majoring in Technology
+      Application and Human Resource Development and also double majoring in Computer Science.<br><br>
+      My hobbies are dancing, and I like cats and the ocean.<br><br>
+      I’m a kind, ambitious, responsible girl, and I hope to have a successful career in the future.<br><br>
+      On a journey, still seeking the future.
+    </p>
+
+    <div class="slider" data-slider style="display:flex; justify-content:center; margin-top:20px;">
+      <div class="slider__viewport" style="max-width:700px;">
+        <div class="slider__track" data-about-track></div>
+        <button class="slider__arrow slider__arrow--prev" aria-label="上一張" data-prev>◀</button>
+        <button class="slider__arrow slider__arrow--next" aria-label="下一張" data-next>▶</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" class="section">
+      <div class="container">
+        <h2 class="caption blue center">Contact </h2>
+        <div class="contact-pane">
+          <form class="contact-grid" id="contactForm">
+            <label><span>Name:</span><input id="name" type="text" required></label>
+            <label><span>Email:</span><input id="email" type="email" required></label>
+            <label><span>Message:</span><textarea id="message" rows="5" required></textarea></label>
+            <div class="contact-actions">
+              <button class="btn" type="submit">Send message</button>
+            </div>
+          </form>
+          <div class="center" style="margin-top:8px;color:#fff;font-size:24px;">
+            email: jiaen.ho.06@gmail.com
+          </div>
         </div>
       </div>
-      <div>
-        <img class="hero__img" data-hero-img src="assets/home/sea.jpg" alt="Hero">
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>About me</h2>
-      <div class="slider" data-slider>
-        <div class="slider__viewport">
-          <div class="slider__track" data-about-track></div>
-          <button class="slider__arrow slider__arrow--prev" aria-label="上一張" data-prev>◀</button>
-          <button class="slider__arrow slider__arrow--next" aria-label="下一張" data-next>▶</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section accent">
-    <div class="container narrow">
-      <h2>Contact</h2>
-      <form class="form" id="contactForm">
-        <label class="form__row"><span>Name</span><input type="text" id="name" required placeholder="Your name" /></label>
-        <label class="form__row"><span>Email</span><input type="email" id="email" required placeholder="your@email.com" /></label>
-        <label class="form__row"><span>Message</span><textarea id="message" rows="6" required placeholder="Write something..."></textarea></label>
-        <button class="btn btn--primary" type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+    </section>
   </main>
+
   <footer class="site-footer"><div class="container"><small>© <span id="year"></span> JIA‑EN HO. All rights reserved.</small></div></footer>
   <script src="app.js"></script>
 </body></html>
