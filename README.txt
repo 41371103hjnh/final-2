@@ -1,0 +1,1 @@
+Drop images into assets/* with the exact filenames listed; open index.html locally or deploy to GitHub Pages.
