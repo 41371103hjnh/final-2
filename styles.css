@@ -166,4 +166,7 @@ h3{font-size:var(--h3);margin:var(--space-2) 0 var(--space-1)}
   .contact-actions .btn{ font-size: 22px; padding: 12px 24px; }
   #contact .center{ font-size: 18px; }
 }
+/* Toy Description 輪播 */
+.toy-text p { display: none; }          /* 預設全部隱藏 */
+.toy-text p.is-active { display: block; } /* 只有當前段落顯示 */
 
