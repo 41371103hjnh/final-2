@@ -2,7 +2,7 @@
   --bg:#f8f9f2; --fg:#3f5974; --muted:#545454; --brand:#baafb7; --brand-2:#3f5974;
   --container:1120px; --radius:16px;
   --h1:clamp(28px,5vw,56px); --h2:clamp(22px,3.5vw,36px); --h3:clamp(18px,2.4vw,24px); --lead:1.12rem;
-  --space-1:8px; --space-2:14px; --space-3:22px; --space-4:36px; --space-5:64px;
+  --space-1:8px; --space-2:14px; --space-3:22px; --space-4:36px; --space-5:50px;
 }
 *{box-sizing:border-box} html,body{height:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.7}
