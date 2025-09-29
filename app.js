@@ -186,6 +186,40 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'ArrowLeft')  { i = (i - 1 + total) % total; render(); }
       if (e.key === 'ArrowRight') { i = (i + 1) % total; render(); }
     });
+    document.addEventListener('DOMContentLoaded', () => {
+  const toyBox   = document.querySelector('[data-toy]');
+  const prevBtn  = document.querySelector('[data-toy-prev]');
+  const nextBtn  = document.querySelector('[data-toy-next]');
+  const idxEl    = document.querySelector('[data-toy-index]');
+  const totalEl  = document.querySelector('[data-toy-total]');
+
+  if (toyBox && prevBtn && nextBtn && idxEl && totalEl) {
+    const slides = Array.from(toyBox.querySelectorAll('p'));
+    const total = slides.length;
+    let i = 0;
+
+    function render() {
+      slides.forEach((p, k) => {
+        p.classList.toggle('is-active', k === i);
+      });
+      idxEl.textContent = String(i + 1);
+      totalEl.textContent = String(total);
+    }
+
+    prevBtn.addEventListener('click', () => {
+      i = (i - 1 + total) % total;  // 循環切換
+      render();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      i = (i + 1) % total;
+      render();
+    });
+
+    render(); // 初始化
+  }
+});
+
 
     render();
   }
