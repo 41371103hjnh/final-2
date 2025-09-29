@@ -65,10 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     'assets/design_sketching/project6.JPG',
   ]);
   mountCards('[data-basic-grid]', [
-    'assets/basic_design/HEIF影像(1).jpg',
-    'assets/basic_design/HEIF影像(2).jpg',
-    'assets/basic_design/HEIF影像(3).jpg',
-    'assets/basic_design/HEIF影像.jpg',
     'assets/basic_design/IMG_7343.JPG',
     'assets/basic_design/Wood Handmade Craft Presentation.jpg',
   ]);
