@@ -185,3 +185,4 @@ h3{font-size:var(--h3);margin:var(--space-2) 0 var(--space-1)}
 body.page-highlight .section {
   padding: 32px 0; /* 原本 64px → 一半 */
 }
+.site-header a { color:#fff; } /* 讓文字改成白色比較清楚 */
