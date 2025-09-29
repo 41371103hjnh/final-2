@@ -170,4 +170,14 @@ h3{font-size:var(--h3);margin:var(--space-2) 0 var(--space-1)}
 .toy-text p { display: none; }          /* 預設全部隱藏 */
 .toy-text p.is-active { display: block; } /* 只有當前段落顯示 */
 
-  
+  /* Toy Description 文字置中 */
+.toy-text {
+  text-align: center;
+}
+
+.toy-text p {
+  margin: 0 auto;
+  max-width: 700px;   /* 讓段落不會太寬，排版更美觀 */
+  line-height: 1.8;
+}
+
